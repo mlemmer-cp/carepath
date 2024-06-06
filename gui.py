@@ -53,6 +53,7 @@ def sendER():
 
 def sendUrgent():
     addBotResponse("Based on my notes, you would be best served at an Urgent Care. Please proceed there now or call 911 for assistance.")
+    disable()
 
 ready = False
 
