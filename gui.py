@@ -71,7 +71,7 @@ def askAboutMainSymptom():
 def askFollowUp():
     followUp = sym.getFollowUpSymptom()
     main = sym.getCurrentSymptom()
-    if followUp:
+    if followUp is True:
         sendER()
         return False
     elif followUp is not None:
@@ -83,8 +83,7 @@ def askFollowUp():
     else:
         return None
 
-def nextBotQuestion(lastUserResponse, answer):
-    posAreas = sym.getPossibleAreas()
+def nextBotQuestion(answer):
     if answer == "invalid":
         addBotResponse(st.session_state.botQues[-1])
     else:
@@ -149,7 +148,7 @@ def handleSubmit():
             response = "I didn't see a clear yes or no within your response. Can you send it again?"
         addBotResponse(response)
         if answer != "end":
-            nextBotQuestion(input, answer)
+            nextBotQuestion(answer)
         else:
             disable()
         
@@ -161,9 +160,10 @@ with st.sidebar:
         reset_chat()
         st.rerun()
 
-    st.write("If any bugs are encountered, re-run the app and click the Reset Chat button above.")
     with st.expander("Credit"):
-         st.write("Developed by Mary Lemmer for CSC 480 in June of 2024.")
+         st.write("Developed by Mary Lemmer for Cal Poly's CSC 480 in June of 2024.")
+    with st.expander("Bugs"):
+        st.write("Notice: There is a known bug if you submit input when the bot is writing the \"Are you having issues with\" questions that it indexes out. \n\nIf any bugs are encountered, click the Reset Chat button above.")
 
 chatResponseCont = st.container(border=True)
 

@@ -42,13 +42,12 @@ class Symptoms:
         return len(self.chooseAreas)
 
     def getNextArea(self):
+        if (self.possibleAreaIndex >= self.numAreas()):
+            return None
         possibleAreas = [*self.chooseAreas]
         next = possibleAreas[self.possibleAreaIndex]
         self.possibleAreaIndex += 1
         return next
-
-    def getPossibleAreas(self):
-        return [*self.chooseAreas]
 
     def addAreaToInterest(self):
         possibleAreas = [*self.chooseAreas]
