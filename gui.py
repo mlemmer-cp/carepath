@@ -160,6 +160,8 @@ with st.sidebar:
     if st.button("Reset Chat"):
         reset_chat()
         st.rerun()
+
+    st.write("If any bugs are encountered, re-run the app and click the Reset Chat button above.")
     with st.expander("Credit"):
          st.write("Developed by Mary Lemmer for CSC 480 in June of 2024.")
 
