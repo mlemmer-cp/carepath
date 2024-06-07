@@ -35,7 +35,7 @@ class Symptoms:
         self.respit = ["trouble breathing", "bleeding"]
         # questions related to symptoms on one half of the body only or should be moved up in the always list of questions
         self.sideOnly = ["any seizures", "drooping of muscles", "mobility loss", "vision loss", "speech or voice issues", "dizziness or weakness", "confusion"]
-        self.chooseAreas = {"head and/or neck": self.headNeck, "digestive system": self.digest, "respitory system": self.respit, "one half of your body": self.sideOnly}
+        self.chooseAreas = {"head and/or neck": self.headNeck, "digestive system": self.digest, "respitory system": self.respit, "only one side of your body": self.sideOnly}
         self.areas = []
 
     def numAreas(self):
