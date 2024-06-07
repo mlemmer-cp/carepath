@@ -2,6 +2,7 @@ import streamlit as st
 import time
 import symptoms as sy
 import random
+import string
 
 if "sym" not in st.session_state:
     st.session_state.sym = sy.Symptoms()
@@ -123,6 +124,7 @@ def handleSubmit():
     input = st.session_state['userInput']
     if input is not None and input != "":
         addUserResponse(input)
+        input = input.translate(str.maketrans('', '', string.punctuation))
         input = input.lower()
         if any(word in ["yes", "y"] for word in input.split(" ")):
             answer = True
