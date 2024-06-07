@@ -31,11 +31,11 @@ class Symptoms:
         self.headNeck = ["a fever", "headache", "trouble breathing", "dizziness or weakness", "confusion", "faintness", "speech or voice issues", "vision loss", "vomiting or loose stools"]
         # questions related to digestion or should be moved up in the always list of questions
         self.digest = ["bleeding", "vomiting or loose stools"]
-        # questions related to respitory or should be moved up in the always list of questions
+        # questions related to respiratory or should be moved up in the always list of questions
         self.respit = ["trouble breathing", "bleeding"]
         # questions related to symptoms on one half of the body only or should be moved up in the always list of questions
         self.sideOnly = ["any seizures", "drooping of muscles", "mobility loss", "vision loss", "speech or voice issues", "dizziness or weakness", "confusion"]
-        self.chooseAreas = {"head and/or neck": self.headNeck, "digestive system": self.digest, "respitory system": self.respit, "only one side of your body": self.sideOnly}
+        self.chooseAreas = {"head and/or neck": self.headNeck, "digestive system": self.digest, "respiratory system": self.respit, "only one side of your body": self.sideOnly}
         self.areas = []
 
     def numAreas(self):
